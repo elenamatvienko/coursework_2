@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 
 public abstract class Task {
-    private int idGenerator = 0;
+    private static int idGenerator = 0;
     private final int id;
     private String title;
     private String description;
@@ -84,7 +84,7 @@ public abstract class Task {
         return Objects.hash(id, title, description, taskTime, type);
     }
 
-    public abstract boolean appearsIn(LocalDate dateForChecking) throws IncorrectArgumentException;
+    public abstract boolean appearsIn(LocalDate dateForChecking);
 
     @Override
     public String toString() {

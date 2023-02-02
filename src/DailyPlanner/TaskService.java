@@ -20,7 +20,7 @@ public class TaskService {
     public Collection<Task> getAllByDate(LocalDate date) {
         List<Task> tasks = new LinkedList<>();
         for (Map.Entry<Integer, Task> entry : taskMap.entrySet()) {
-            if (entry.getValue() != null && (entry.getValue().getTaskTime().toLocalDate().equals(date))) {
+            if (entry.getValue().appearsIn(date)) {
                 tasks.add(entry.getValue());
             }
         }

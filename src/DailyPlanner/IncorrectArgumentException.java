@@ -10,6 +10,6 @@ public class IncorrectArgumentException extends Exception {
 
     @Override
     public String getMessage() {
-        return "Введены некорректные данные по задаче";
+        return "Параметр " + argument + " задан некорректно";
     }
 }
